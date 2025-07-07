@@ -1,0 +1,218 @@
+:root {
+  /* Colors */
+  --color-red: hsl(14, 86%, 42%);
+  --color-green: hsl(159, 69%, 38%);
+
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+
+  /* Typography */
+  --font-family: 'Red Hat Text', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: var(--font-body-size);
+    max-width: 1200px;
+    font-family: var(--font-family);
+}
+
+#container{
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding:1.5rem;
+  gap: 0.5rem;
+  /* gap: 1rem;
+  padding: 1.5rem; */
+}
+#container #products-container, #cart-container{
+
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+#products-container h1 {
+}
+#products-container .card, #cart-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.card,  #cart-container{
+  position: relative;
+  width: 100%;
+  max-width: 300px; 
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  transition: transform 0.3s ease; 
+}
+
+.card-button {
+  position: absolute;
+  bottom: 5rem; 
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background-color: #fff;
+  color: #333;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 25px; 
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.remove-product, .add-product{
+  cursor: pointer;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  padding: 4px;
+  border: none;
+  border-radius:20px ;
+  font-size: 1.2rem;
+  background-color: #fff;
+}
+
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+  padding-left: 0.5rem;
+}
+.card-body .category{
+  color: var(--rose-500);
+  font-weight: var(--font-weight-regular);
+}
+
+.price{
+  color: var(--color-red);
+  font-weight: var(--font-weight-semibold);
+}
+#cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left; /* Changé de center à left pour l'alignement */
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 400px; /* Largeur maximale pour une meilleure lisibilité */
+  margin: 0 auto;
+}
+
+#cart-container h2 {
+  color: var(--color-red);
+  margin-bottom: 1rem;
+  align-self: flex-start; /* Aligne le titre à gauche */
+}
+
+.order-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espacement augmenté entre les articles */
+}
+
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.order-details p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.quantity-details {
+  display: flex;
+  gap: 0.5rem;
+  color: #666; /* Couleur plus subtile pour les détails de prix */
+}
+
+.quantity {
+  color: var(--color-red);
+}
+
+.unit-price {
+  color: #666;
+}
+
+.total-price {
+  font-weight: bold;
+  color: #000;
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Garder l'alignement en haut */
+  padding: 0;
+  position: relative; /* Ajouté pour le positionnement relatif */
+}
+
+.remove-order {
+  border: 0.2px solid gray;
+  border-radius: 9px;
+  width: 18px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 1rem;
+  position: absolute; /* Changé à absolute */
+  right: 0; /* Aligné à droite */
+  bottom: 0; /* Positionné en bas du conteneur .order */
+}
+.confirm-order{
+  background-color: var(--color-red);
+  border-radius:20px;
+  padding: 0.75rem;
+  color: #fff;
+  border: none;
+}
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  #container {
+    flex-direction: row;   
+  }
+}
