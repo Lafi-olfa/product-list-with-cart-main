@@ -133,7 +133,7 @@ body{
   color: var(--color-red);
   margin-bottom: 1rem;
   align-self: flex-start; 
-
+}
 .order-container {
   width: 100%;
   display: flex;
@@ -194,6 +194,7 @@ body{
   position: static; 
   right: 0; 
   bottom: 0;
+}
 .confirm-order{
   background-color: var(--color-red);
   border-radius:20px;
